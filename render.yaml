@@ -6,5 +6,13 @@ services:
     buildCommand: mvn -DskipTests package
     startCommand: java -Dserver.port=$PORT -jar target/chat-app-0.0.1-SNAPSHOT.jar
     envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d92c5lp9rddc738d3s70-a.singapore-postgres.render.com:5432/chat_db_spk3?sslmode=require
+      - key: SPRING_DATASOURCE_USERNAME
+        value: chat_db_spk3_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: oP6IBp5LdaP2rLefyXNp0dEeMWoxuesr
+      - key: SPRING_DATASOURCE_DRIVER
+        value: org.postgresql.Driver
       - key: SPRING_JPA_DDL
         value: update
