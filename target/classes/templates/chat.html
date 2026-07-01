@@ -40,5 +40,13 @@
     Send
 </button>
 
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var username = /*[[${username}]]*/ 'Anonymous';
+    /*]]>*/
+</script>
+
+<script src="/js/websocket.js"></script>
+
 </body>
 </html>
