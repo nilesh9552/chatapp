@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Chat Room</title>
+</head>
+<body>
+
+<h2>Welcome</h2>
+
+<h3 th:text="${username}"></h3>
+
+<hr>
+
+<div id="messages">
+
+    <div th:each="msg : ${messages}">
+
+        <b th:text="${msg.sender}"></b>
+        :
+        <span th:text="${msg.message}"></span>
+
+        <br><br>
+
+    </div>
+
+</div>
+
+<hr>
+
+<input
+        id="message"
+        type="text"
+        placeholder="Type Message">
+
+<button id="sendBtn">
+    Send
+</button>
+
+</body>
+</html>
